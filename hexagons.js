@@ -9,7 +9,7 @@ var clicked = [];
         hexRectangleHeight,
         hexRectangleWidth,
         hexagonAngle = 0.523598776, // 30 degrees in radians
-        sideLength = 72,
+        sideLength = 98,
         boardWidth = 5,
         boardHeight = 5;
  
