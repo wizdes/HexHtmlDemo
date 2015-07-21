@@ -37,17 +37,17 @@ setTimeout(function() {
   
   $(function () {
   $('#1').on('click', function () {
-    $('for').appendTo('#Content');
+    $('<p><font size="6">for</font></p>').appendTo('#Content');
   });
 });
   $(function () {
   $('#2').on('click', function () {
-    $('<br/>').appendTo('#Content');
+    $('<p><font size="6">/n</font></p>').appendTo('#Content');
   });
 });
   $(function () {
   $('#3').on('click', function () {
-    $('if').appendTo('#Content');
+    $('<p><font size="6">if</font></p>').appendTo('#Content');
   });
 });
   $(function () {
