@@ -37,7 +37,7 @@ setTimeout(function() {
   
   $(function () {
   $('#1').on('click', function () {
-    $('<p><font size="6">for</font></p>').appendTo('#Content');
+    $('for').appendTo('#Content');
   });
 });
   $(function () {
@@ -47,7 +47,7 @@ setTimeout(function() {
 });
   $(function () {
   $('#3').on('click', function () {
-    $('<p><font size="6">if</font></p>').appendTo('#Content');
+    $('if').appendTo('#Content');
   });
 });
   $(function () {
