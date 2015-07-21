@@ -40,6 +40,57 @@ setTimeout(function() {
     $('<p><font size="6">for</font></p>').appendTo('#Content');
   });
 });
+  $(function () {
+  $('#2').on('click', function () {
+    $('<br/>').appendTo('#Content');
+  });
+});
+  $(function () {
+  $('#3').on('click', function () {
+    $('<p><font size="6">if</font></p>').appendTo('#Content');
+  });
+});
+  $(function () {
+  $('#4').on('click', function () {
+    $('<p><font size="6">int</font></p>').appendTo('#Content');
+  });
+});
+  $(function () {
+  $('#5').on('click', function () {
+    $('<p><font size="6">string</font></p>').appendTo('#Content');
+  });
+});
+  $(function () {
+  $('#6').on('click', function () {
+    $('<p><font size="6">{</font></p>').appendTo('#Content');
+  });
+});
+  $(function () {
+  $('#7').on('click', function () {
+    $('<p><font size="6">}</font></p>').appendTo('#Content');
+  });
+});
+  $(function () {
+  $('#8').on('click', function () {
+    $('<p><font size="6">(</font></p>').appendTo('#Content');
+  });
+});
+  $(function () {
+  $('#9').on('click', function () {
+    $('<p><font size="6">)</font></p>').appendTo('#Content');
+  });
+});
+  $(function () {
+  $('#10').on('click', function () {
+    $('<p><font size="6">=</font></p>').appendTo('#Content');
+  });
+});
+  $(function () {
+  $('#11').on('click', function () {
+    $('<p><font size="6">;</font></p>').appendTo('#Content');
+  });
+});
+
     
   $('.selector button').click(function(e) {
   toggleOptions($(this).parent());
