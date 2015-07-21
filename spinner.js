@@ -34,6 +34,12 @@ function toggleOptions(s) {
 
 setTimeout(function() {
   toggleOptions('.selector');
+  
+  $(function () {
+  $('#1').on('click', function () {
+    $('<p>Text</p>').appendTo('#Content');
+  });
+});
     
   $('.selector button').click(function(e) {
   toggleOptions($(this).parent());
