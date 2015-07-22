@@ -57,37 +57,37 @@ setTimeout(function() {
 });
   $(function () {
   $('#5').on('click', function () {
-    $('<p><font size="6">x</font></p>').appendTo('#Content');
+    $('<p><font size="6">x</font></p>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#6').on('click', function () {
-    $('<font size="6">{</font>').appendTo('#Content');
+    $('<font size="6">{</font>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#7').on('click', function () {
-    $('<font size="6">}</font>').appendTo('#Content');
+    $('<font size="6">}</font>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#8').on('click', function () {
-    $('<font size="6">(</font>').appendTo('#Content');
+    $('<font size="6">(</font>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#9').on('click', function () {
-    $('<font size="6">)</font>').appendTo('#Content');
+    $('<font size="6">)</font>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#10').on('click', function () {
-    $('<font size="6">=</font>').appendTo('#Content');
+    $('<font size="6">=</font>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#11').on('click', function () {
-    $('<font size="6">;</font>').appendTo('#Content');
+    $('<font size="6">;</font>').appendTo('#inputVals');
   });
 });
 
