@@ -37,22 +37,22 @@ setTimeout(function() {
   
   $(function () {
   $('#1').on('click', function () {
-    $('<p><font size="6">for</font></p>').appendTo('#Content');
+    $('<p><font size="6">for</font></p>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#2').on('click', function () {
-    $('<p><font size="6">/n</font></p>').appendTo('#Content');
+    $('<p><font size="6">/n</font></p>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#3').on('click', function () {
-    $('<p><font size="6">if</font></p>').appendTo('#Content');
+    $('<p><font size="6">if</font></p>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#4').on('click', function () {
-    $('<p><font size="6">int</font></p>').appendTo('#Content');
+    $('<p><font size="6">int</font></p>').appendTo('#inputVals');
   });
 });
   $(function () {
