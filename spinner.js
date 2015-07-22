@@ -37,7 +37,7 @@ setTimeout(function() {
   
   $(function () {
   $('#1').on('click', function () {
-    $('<p><font size="6">for</font></p>').appendTo('#inputVals');
+    $('<font size="6">for</font>').appendTo('#inputVals');
   });
 });
   $(function () {
