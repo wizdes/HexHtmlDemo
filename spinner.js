@@ -57,7 +57,7 @@ setTimeout(function() {
 });
   $(function () {
   $('#5').on('click', function () {
-    $('<p><font size="6">x</font></p>').appendTo('#inputVals');
+    $('<font size="6">x</font>').appendTo('#inputVals');
   });
 });
   $(function () {
