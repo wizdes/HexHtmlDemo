@@ -42,52 +42,52 @@ setTimeout(function() {
 });
   $(function () {
   $('#2').on('click', function () {
-    $('<p><font size="6">/n</font></p>').appendTo('#inputVals');
+    $('<font size="6"></font>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#3').on('click', function () {
-    $('<p><font size="6">if</font></p>').appendTo('#inputVals');
+    $('<font size="6">if</font>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#4').on('click', function () {
-    $('<p><font size="6">int</font></p>').appendTo('#inputVals');
+    $('<font size="6">int</font>').appendTo('#inputVals');
   });
 });
   $(function () {
   $('#5').on('click', function () {
-    $('<p><font size="6">string</font></p>').appendTo('#Content');
+    $('<p><font size="6">x</font></p>').appendTo('#Content');
   });
 });
   $(function () {
   $('#6').on('click', function () {
-    $('<p><font size="6">{</font></p>').appendTo('#Content');
+    $('<font size="6">{</font>').appendTo('#Content');
   });
 });
   $(function () {
   $('#7').on('click', function () {
-    $('<p><font size="6">}</font></p>').appendTo('#Content');
+    $('<font size="6">}</font>').appendTo('#Content');
   });
 });
   $(function () {
   $('#8').on('click', function () {
-    $('<p><font size="6">(</font></p>').appendTo('#Content');
+    $('<font size="6">(</font>').appendTo('#Content');
   });
 });
   $(function () {
   $('#9').on('click', function () {
-    $('<p><font size="6">)</font></p>').appendTo('#Content');
+    $('<font size="6">)</font>').appendTo('#Content');
   });
 });
   $(function () {
   $('#10').on('click', function () {
-    $('<p><font size="6">=</font></p>').appendTo('#Content');
+    $('<font size="6">=</font>').appendTo('#Content');
   });
 });
   $(function () {
   $('#11').on('click', function () {
-    $('<p><font size="6">;</font></p>').appendTo('#Content');
+    $('<font size="6">;</font>').appendTo('#Content');
   });
 });
 
