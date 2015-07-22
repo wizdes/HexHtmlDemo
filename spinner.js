@@ -42,7 +42,7 @@ setTimeout(function() {
 });
   $(function () {
   $('#2').on('click', function () {
-    $('<font size="6"></font>').appendTo('#inputVals');
+    $('<p><font size="6"></font></p>').appendTo('#inputVals');
   });
 });
   $(function () {
