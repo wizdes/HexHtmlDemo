@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Mobile Code Wars</title>
+    <script src="jquery.min.js"></script>
+    <script src="ace.js"></script>
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 40px;
+        left: 0;
+    }
+    #buttons{
+        position: absolute;
+        bottom: 10px;
+        left:25%;
+    }
+    .ace_highlight-marker {
+        position: absolute; /* without this positions will be erong */
+        background: #abc; /* color */ 
+        z-index: 1000; /* in front of all other markers */ 
+    }
+    
+</style>
+</head>
+<body>
+
+<div id="editor"></div>
+<div id="buttons">
+    <button id="for_button">for loop</button>
+    <button id="int_button">int</button>
+    <button id="string_button">string</button>
+    <button id="eq_button">=</button>
+    <button id="plus_button">+</button>
+    <button id="num_button">value</button>
+    <input  id="code_input"></input>
+    <button id="semi_button">;</button>
+    <button id="newline_button">new line</button>
+</div>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+    editor.setOptions({
+    readOnly: true
+    });
+    
+    $('#for_button').click(function() {
+        addCode(0);    
+    });
+    $('#int_button').click(function() {
+        addCode(1);    
+    });
+    $('#string_button').click(function() {
+        addCode(2);    
+    });
+    $('#eq_button').click(function() {
+        addCode(3);    
+    });
+    $('#plus_button').click(function() {
+        addCode(4);    
+    });
+    $('#num_button').click(function() {
+        addCode(5);    
+    });
+    $('#semi_button').click(function() {
+        addCode(6);    
+    });
+    $('#newline_button').click(function() {
+        addCode(7);    
+    });
+    
+    
+    function addCode(toAdd){
+        var cursorPosition = editor.getCursorPosition();
+        if(editor.getSession().getDocument().getLine(cursorPosition.row).charAt(cursorPosition.column) == "\u2435"){
+            editor.remove(cursorPosition.row, cursorPosition.column, cursorPosition.row, cursorPosition.column + 1);
+            switch(toAdd) {
+                case 0:
+                    var numtabs = editor.getSession().getDocument().getLine(cursorPosition.row).match(/\t/g).length;
+                    var val = "";
+                    for(x = 0; x < numtabs; x++){
+                        val = val + "\t";   
+                    }                    
+                    editor.insert("for(\u2435;\u2435;\u2435){\n" + val + "\t\u2435\n" + val + "}\u2435");
+                    editor.gotoLine(cursorPosition.row + 1, cursorPosition.column + 4);                    
+                    break;
+                case 1:
+                    ending = ";";
+                    var y = editor.getSession().getDocument().getLine(cursorPosition.row).length;
+                    var q = cursorPosition.column;
+                    if(editor.getSession().getDocument().getLine(cursorPosition.row).length >= cursorPosition.column &&
+                        editor.getSession().getDocument().getLine(cursorPosition.row).charAt(cursorPosition.column + 1)){
+                        ending = "";   
+                    }
+                    editor.insert("int " + $('#code_input').val() + "\u2435" + "=" + "\u2435" + ending);
+                    editor.gotoLine(cursorPosition.row + 1, cursorPosition.column + 4);                    
+                    break;
+                case 2:
+                    ending = ";";
+                    if(editor.getSession().getDocument().getLine(cursorPosition.row).length >= cursorPosition.column &&
+                        editor.getSession().getDocument().getLine(cursorPosition.row).charAt(cursorPosition.column + 1)){
+                        ending = "";   
+                    }
+                    editor.insert("string " + $('#code_input').val() + "\u2435" + "=" + "\u2435" + ending);
+                    editor.gotoLine(cursorPosition.row + 1, cursorPosition.column + 7);                    
+                    break;
+                case 3:
+                    editor.insert("=\u2435");
+                    editor.gotoLine(cursorPosition.row + 1, cursorPosition.column + 1);                    
+                    break;
+                case 4:
+                    editor.insert("+\u2435");
+                    editor.gotoLine(cursorPosition.row + 1, cursorPosition.column + 1);                    
+                    break;
+                case 5:
+                    editor.insert($('#code_input').val() + "\u2435");
+                    editor.gotoLine(cursorPosition.row + 1, cursorPosition.column + 1);                    
+                    break;
+                case 6:
+                    editor.insert(";\u2435");
+                    editor.gotoLine(cursorPosition.row + 1, cursorPosition.column + 1);                    
+                    break;
+                case 7:
+                    var numtabs = editor.getSession().getDocument().getLine(cursorPosition.row).match(/\t/g).length;
+                    var val = "\n";
+                    for(x = 0; x < numtabs; x++){
+                        val = val + "\t";   
+                    }
+                    val = val + "\u2435";
+                    editor.insert(val);
+                    editor.gotoLine(cursorPosition.row + 2, 1);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    }
+    
+    function setCursor(x,y){
+        editor.gotoLine(y,x,true);
+    }
+    
+    var prev_x = 0;
+    var prev_y = 0;
+    
+    editor.insert("int function(){\n\t\u2435\n}");
+    editor.gotoLine(2,1);
+    
+    clearHighlighted();
+    
+    function clearHighlighted(){
+        var x = editor.getSession().getMarkers(false);
+        for(var i in x){
+            editor.getSession().removeMarker(i);   
+        }        
+    }
+    
+    function getStartSelection(rowVal, columnVal){
+        var codeLine = editor.getSession().getDocument().getLine(rowVal);    
+        var index = columnVal;
+        while(index > 0){
+            if(codeLine.charAt(index) == "("
+               || codeLine.charAt(index) == "\t"
+               || codeLine.charAt(index) == ")"
+               || codeLine.charAt(index) == ";"){
+                break;
+            }
+            else if(codeLine.charAt(index) == " "){
+                for(i = 0; i < index; i++){
+                    if(codeLine.charAt(i) != " "){
+                        index--;   
+                    }                    
+                }
+                break;
+            }
+            index--;
+        }
+        return index + 1;
+    }
+    
+    function getEndSelection(rowVal, columnVal){
+        var codeLine = editor.getSession().getDocument().getLine(rowVal);    
+        var index = columnVal;
+        while(index < codeLine.length){
+            if(codeLine.charAt(index) == ")"
+               || codeLine.charAt(index) == ";"){
+                break;
+            }
+            
+            index++;                
+        }
+        return index;
+    }
+    
+    editor.on("changeSelection",function(){
+        var cursorPosition = editor.getCursorPosition();
+        if((prev_x == cursorPosition.row && prev_y == cursorPosition.column) || cursorPosition.row == 0){
+            return;
+        }
+        else{
+            clearHighlighted();
+            if(editor.getSession().getDocument().getLine(cursorPosition.row).charAt(cursorPosition.column) == "\u2435"){
+                return;   
+            }
+            prev_x = cursorPosition.row;
+            prev_y = cursorPosition.column;
+            var Range = ace.require('ace/range').Range;
+            var startSelection = getStartSelection(cursorPosition.row, cursorPosition.column);
+            var endSelection = getEndSelection(cursorPosition.row, cursorPosition.column);
+            var range = new Range(cursorPosition.row, startSelection, cursorPosition.row, endSelection);
+            var marker = editor.getSession().addMarker(range,"ace_highlight-marker", "text");            
+        }
+    });
+</script>
+    </body>    
+</html>
